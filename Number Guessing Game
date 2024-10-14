@@ -1,0 +1,31 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int main()
+{
+	srand(time(NULL));
+	int randomno = rand()%100+1;
+	int a;
+	cout<<"\nN U M B E R  G U E S S I N G  G A M E\n";
+	cout<<"Enter your guess(1-100):\n";
+	cin>>a;
+	if(a>randomno)
+	{
+		cout<<"the number is too high!!!\n";
+	}
+	else if(a<randomno)
+	{
+		cout<<"the number is too low!!!\n";
+	}
+	else if(a==randomno)
+	{
+		cout<<"YOU GUESSED THE NUMBER!!!\n";
+	}
+	else
+	{
+		cout<<"SORRY, YOU LOST!\n";
+	}
+	cout<<"the random number was:"<<randomno<<endl;
+	return 0;
+}
