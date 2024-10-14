@@ -1,0 +1,69 @@
+#include<iostream>
+#include<windows.h>
+using namespace std;
+
+void print_tasks(string tasks[],int tasks_count)
+{
+	cout<<"\nTasks to do:\n"<<endl;
+	cout<<"------------------------------------------------------";
+	for(int i=0;i<tasks_count;i++)
+	{
+		cout<<"\nTask "<<i<<":"<<tasks[i]<<endl;
+	}
+	cout<<"------------------------------------------------------";
+}
+
+int main()
+{
+	string tasks[10]={""};
+	int tasks_count=0;
+	int option=-1;
+	while(option!=0)
+	{
+
+	cout<<"\n************ T  O -  D O   L I S T ************\n"<<endl;
+	cout<<"0. TERMINATE"<<endl;
+	cout<<"1. ADD A TASK"<<endl;
+	cout<<"2. VIEW THE TASKS"<<endl;
+	cout<<"3. DELETE A TASK"<<endl;
+	cout<<"Enter your choice:";
+	cin>>option;
+	switch(option)
+	{
+		
+		case 1:
+		{		
+				if(tasks_count>9)
+				{
+					cout<<"your list is full, cannot add more!!!";
+				}
+				else
+				{
+					cout<<"Enter a new task:\n";
+					cin.ignore();
+					getline(cin,tasks[tasks_count]);
+					tasks_count++;
+				}
+				break;
+		}
+		case 2:
+	    print_tasks(tasks,tasks_count);
+		break;
+		case 3:
+			int del_tasks =0;
+			cout<<"Enter a task to delete:\n";
+			cin>>del_tasks;
+			if(del_tasks<0 || del_tasks>9)
+			{
+				cout<<"invalid no!!!";
+				break;
+			}
+			for(int i=del_tasks;i<tasks_count;i++)
+			{
+				tasks[i]=tasks[i+1];
+			}
+			tasks_count=tasks_count-1;
+			break;
+	}
+}
+}
