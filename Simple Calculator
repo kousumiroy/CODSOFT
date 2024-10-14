@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b;
+	cout<<"S I M P L E   C A L C U L A T O R\n";
+	cout<<"\nEnter first number:\n";
+	cin>>a;
+	cout<<"\nEnter second number:\n";
+	cin>>b;
+	int choice;
+	cout<<"\n1.ADDITION\n";
+	cout<<"\n2.SUBSTRACTION\n";
+	cout<<"\n3.DIVISION\n";
+	cout<<"\n4.MULTIPLICATION\n";
+	cout<<"\n5.MODULUS\n";
+	cout<<"\nplease enter your choice:\n";
+	cin>>choice;
+	switch(choice)
+	{
+		case 1:
+			cout<<"your result:"<<a+b<<endl;
+			break;
+		case 2:
+			cout<<"your result:"<<a-b<<endl;
+			break;
+		case 3:
+			cout<<"your result:"<<a/b<<endl;
+			break;
+		case 4:
+			cout<<"your result:"<<a*b<<endl;
+			break;
+		case 5:
+			cout<<"your result:"<<a%b<<endl;
+			break;				
+		default: 
+		     cout<<"invalid!!!"<<endl;	
+	}
+	return 0;
+}
